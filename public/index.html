@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Websockets drawing app</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+  <script type="text/javascript" src="sketch.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <style>
+        p.ex1 {
+                font-size: 30px;
+        }
+        p.ex2 {
+                font-size: 50px;
+        }
+  </style>
+</head>
+
+<body>
+  <p class="ex2">AWS Europe (Spain) - eu-south-2</p>
+  <p>Choose color (# hex)</p>
+  <input type="text" name="custom_color" placeholder="#FFFFFF" id="pickcolor" class="call-picker" />
+  <div id="color-holder" class="color-holder call-picker"></div>
+  <button id="color-btn">Change color</button>
+  <br />
+  <p>Choose stroke width</p>
+  <input type="text" name="stroke_width" placeholder="4" id="stroke-width-picker" class="stroke_width_picker" />
+  <button id="stroke-btn">Change stroke width</button>
+  <br />
+  <p>Latency summary:</p>
+  <label for="latency" style="color :white;">Latency (ms): </label>
+  <output type="textbox" name="latency"  id="latency" style="color :white;"></output>
+  <br />
+  <p></p>
+  <label for="result" style="color :white;">Average (ms): </label>
+  <output type="textbox" name="result"  id="result" style="color :white;"></output>
+  <br />
+  <p></p>
+  <label for="max" style="color :white;">Max (ms): </label>
+  <output type="textbox" name="max"  id="max" style="color :white;"></output>
+  <br />
+  <p></p>
+  <label for="min" style="color :white;">Min (ms): </label>
+  <output type="textbox" name="min"  id="min" style="color :white;"></output>
+  <br />
+  <p></p>
+  <button id="exportar">Exportar fichero de Latencias</button>
+  <br />
+  <p></p>
+  <br />
+  <p></p>
+  <h1 style="text-align: center;color :white;">Latency Graph (ms)</h1>
+  <canvas title="This is a canvas." id="myChart" style="display:block;margin:0 auto;background-color: white;width:100%;max-width:700px" ></canvas>
+  <br />
+  <p></p>
+</body>
+</html>
