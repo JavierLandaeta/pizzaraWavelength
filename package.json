@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A realtime drawing app using socketIO",
   "main": "server.js",
+  "start": "node server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Gabriel Tanner",
   "license": "MIT",
@@ -20,6 +21,10 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "p5": "^1.4.0",
-    "socket.io": "^4.4.1"
+    "socket.io": "^4.4.1",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
   }
 }
