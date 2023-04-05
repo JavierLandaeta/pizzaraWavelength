@@ -2,8 +2,6 @@ pipeline {
     agent {
         node {
             label 'zaragoza'
-            // Asegurarse de que el directorio de trabajo esté limpio
-            deleteDir()
         }
     }
     triggers{
@@ -13,6 +11,9 @@ pipeline {
         stage('Checkout') {
             steps {
                 sh 'mkdir -p drawingApp/DrawingApp'
+                sh 'cd drawingApp/DrawingApp'
+                // Asegurarse de que el directorio de trabajo esté limpio
+                deleteDir()
                 git 'https://github.com/JavierLandaeta/pizzaraWavelength/tree/zaragoza.git'
             }
         }
