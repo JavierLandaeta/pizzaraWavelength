@@ -6,7 +6,9 @@ pipeline {
             deleteDir()
         }
     }
-
+    triggers{
+        pollSCM '*/5 * * * *'
+    }
     stages {
         stage('Checkout') {
             steps {
