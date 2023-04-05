@@ -38,7 +38,8 @@ pipeline {
                 echo 'Deploying ...'
                 sh 'fuser -k 3000/tcp  || true'
                 // sh 'nohup node server.js > /dev/null 2>&1&'
-                sh 'nohup node server.js'
+                sh 'export BUILD_ID=dontKillMe'
+                sh 'nohup node server.js &'
             }
         }
     }
