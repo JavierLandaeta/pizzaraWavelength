@@ -4,9 +4,9 @@ pipeline {
             label 'zaragoza'
         }
     }
-    triggers{
-        pollSCM '*/5 * * * *'
-    }
+    // triggers{
+    //     pollSCM '*/5 * * * *'
+    // }
     stages {
         stage('Checkout') {
             steps {
