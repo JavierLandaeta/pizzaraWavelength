@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                echo 'Checking out...'
                 sh 'mkdir -p drawingApp/DrawingApp'
                 sh 'cd drawingApp/DrawingApp'
                 // Asegurarse de que el directorio de trabajo esté limpio
@@ -20,18 +21,22 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
+                echo 'Installing dependencies ...'
                 sh 'npm install'
             }
         }
 
         stage('Test') {
             steps {
+                echo 'Testing ...'
                 sh 'npm run test'
             }
         }
 
         stage('Deploy') {
             steps {
+                echo 'Deploying ...'
+                sh 'set +e'
                 sh 'nohup node server.js'
             }
         }
