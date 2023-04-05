@@ -39,7 +39,7 @@ pipeline {
                 sh 'fuser -k 3000/tcp  || true'
                 // sh 'nohup node server.js > /dev/null 2>&1&'
                 // sh 'export BUILD_ID=dontKillMe'
-                sh 'BUILD_ID=dontKillMe nohup npm start > output.txt&'
+                sh 'BUILD_ID=dontKillMe forever start'
             }
         }
     }
