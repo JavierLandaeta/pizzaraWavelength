@@ -14,7 +14,7 @@ pipeline {
                 sh 'cd drawingApp/DrawingApp'
                 // Asegurarse de que el directorio de trabajo esté limpio
                 deleteDir()
-                git clone -b 'zaragoza' 'https://github.com/JavierLandaeta/pizzaraWavelength.git'
+                git branch: 'zaragoza', url: 'https://github.com/JavierLandaeta/pizzaraWavelength.git'
             }
         }
 
