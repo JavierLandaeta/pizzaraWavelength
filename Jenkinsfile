@@ -36,7 +36,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying ...'
-                sh 'fuser -k 3000/tcp'  || true
+                //sh 'fuser -k 3000/tcp'  || true
                 sh 'nohup node server.js'
             }
         }
