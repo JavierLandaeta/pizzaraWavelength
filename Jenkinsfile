@@ -4,17 +4,17 @@ pipeline {
             label 'zaragoza'
         }
     }
-    // triggers{
-    //     pollSCM '*/5 * * * *'
-    // }
+    triggers{
+         pollSCM '*/5 * * * *'
+    }
     stages {
         stage('Checkout') {
             steps {
                 echo 'Checking out...'
-                sh 'mkdir -p drawingApp/DrawingApp'
-                sh 'cd drawingApp/DrawingApp'
+                //sh 'mkdir -p drawingApp/DrawingApp'
+                //sh 'cd drawingApp/DrawingApp'
                 // Asegurarse de que el directorio de trabajo esté limpio
-                deleteDir()
+                //deleteDir()
                 git branch: 'zaragoza', url: 'https://github.com/JavierLandaeta/pizzaraWavelength.git'
             }
         }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 echo 'Deploying ...'
                 sh 'fuser -k 3000/tcp  || true'
-                sh 'nohup node server.js'
+                sh 'nohup node server.js || true'
             }
         }
     }
